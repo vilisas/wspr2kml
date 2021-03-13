@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+        <Style id="sn_blu-blank">
+                <IconStyle>
+                        <scale>3</scale>
+                        <Icon>
+                                <href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                        </Icon>
+                        <hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+                </IconStyle>
+                <BalloonStyle>
+                </BalloonStyle>
+                <ListStyle>
+                        <ItemIcon>
+                                <href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                        </ItemIcon>
+                </ListStyle>
+        </Style>
+        <StyleMap id="msn_blu-blank">
+                <Pair>
+                        <key>normal</key>
+                        <styleUrl>#sn_blu-blank</styleUrl>
+                </Pair>
+                <Pair>
+                        <key>highlight</key>
+                        <styleUrl>#sh_blu-blank</styleUrl>
+                </Pair>
+        </StyleMap>
+        <Style id="sh_blu-blank">
+                <IconStyle>
+                        <scale>4</scale>
+                        <Icon>
+                                <href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                        </Icon>
+                        <hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+                </IconStyle>
+                <BalloonStyle>
+                </BalloonStyle>
+                <ListStyle>
+                        <ItemIcon>
+                                <href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                        </ItemIcon>
+                </ListStyle>
+        </Style>
+        <Style id="track">
+                <LineStyle>
+                        <color>ff0400ff</color>
+                        <width>6</width>
+                </LineStyle>
+        </Style>
+
+  <Folder>
+   <name> WSPR track</name>
+   <LineStyle id="line">
+   <color>ff0000ff</color>
+   <width>3</width>
+   </LineStyle>
+  <Folder>
+    <name>WSPR Points</name>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-10 07:24
+Locator:KO24pr
+Power: 0.01 W
+&#916; Distance: 0.00 km
+&#916; Time: 0 h
+Speed: 0 km/h
+Reported by: LY3FF
+SNR: +1 dB
+Rep. distance: 5 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>25.2954861111111,54.7310763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-11 07:14
+Locator:LN67
+Power: 0.01 W
+&#916; Distance: 2075.73 km
+&#916; Time: 23.27 h
+Speed: 89.20 km/h
+Reported by: DK6UG
+SNR: -20 dB
+Rep. distance: 3256 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>52.9621527777778,47.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-11 07:58
+Locator:LN77
+Power: 0.01 W
+&#916; Distance: 150.29 km
+&#916; Time: 0.73 h
+Speed: 205.88 km/h
+Reported by: 2E0PYB
+SNR: -20 dB
+Rep. distance: 3845 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>54.9621527777778,47.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-11 09:24
+Locator:LN87
+Power: 0.01 W
+&#916; Distance: 150.29 km
+&#916; Time: 0.67 h
+Speed: 224.31 km/h
+Reported by: DK6UG
+SNR: -23 dB
+Rep. distance: 3536 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>56.9621527777778,47.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-11 09:54
+Locator:LN97
+Power: 0.01 W
+&#916; Distance: 150.29 km
+&#916; Time: 0.50 h
+Speed: 300.58 km/h
+Reported by: DK3RU
+SNR: -20 dB
+Rep. distance: 3703 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>58.9621527777778,47.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-11 12:02
+Locator:MN71
+Power: 1 W
+&#916; Distance: 1430.15 km
+&#916; Time: 1.90 h
+Speed: 752.71 km/h
+Reported by: F5EMT
+SNR: -28 dB
+Rep. distance: 5601 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>74.9621527777778,41.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-12 10:36
+Locator:PM39fa
+Power: 0.02 W
+&#916; Distance: 4313.81 km
+&#916; Time: 22.57 h
+Speed: 191.13 km/h
+Reported by: LY0NAS
+SNR: -15 dB
+Rep. distance: 7200 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>126.462152777778,39.0227430555556,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-12 21:50
+Locator:RM06
+Power: 0.01 W
+&#916; Distance: 3028.01 km
+&#916; Time: 11.23 h
+Speed: 269.64 km/h
+Reported by: NH6V
+SNR: -22 dB
+Rep. distance: 4573 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>160.962152777778,36.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-13 01:48
+Locator:PO85
+Power: 0.01 W
+&#916; Distance: 2782.47 km
+&#916; Time: 3.97 h
+Speed: 700.87 km/h
+Reported by: KFS
+SNR: -19 dB
+Rep. distance: 7267 km
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>136.962152777778,55.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>LY1BWB</name>
+  <description>Time:  2021-03-13 04:08
+Locator:QO05
+Power: 0.01 W
+&#916; Distance: 252.00 km
+&#916; Time: 2.33 h
+Speed: 108.15 km/h
+Reported by: KH6KR
+SNR: -21 dB
+Rep. distance: 6407 km
+
+Total:
+Distance: 14333.04 km
+Time:	  67.17 h
+Speed:	  213 km/h
+</description>
+  <styleUrl>#msn_blu-blank</styleUrl>
+  <Point>
+  <altitudeMode>absolute</altitudeMode>
+  <extrude>1</extrude>
+  <coordinates>140.962152777778,55.4810763888889,13000</coordinates>
+  </Point>
+</Placemark>
+  </Folder>
+  <Folder>
+    <name>Track</name>
+
+<Placemark>
+  <name>Track</name>
+
+  <styleUrl>#track</styleUrl>
+
+<LineString id="track">
+  <gx:altitudeOffset>0</gx:altitudeOffset>
+  <extrude>1</extrude>
+  <tessellate>1</tessellate>
+  <gx:altitudeMode>clampToGround</gx:altitudeMode>
+  <gx:drawOrder>0</gx:drawOrder>
+  <coordinates>
+    25.2954861111111,54.7310763888889,13000
+    52.9621527777778,47.4810763888889,13000
+    54.9621527777778,47.4810763888889,13000
+    56.9621527777778,47.4810763888889,13000
+    58.9621527777778,47.4810763888889,13000
+    74.9621527777778,41.4810763888889,13000
+    126.462152777778,39.0227430555556,13000
+    160.962152777778,36.4810763888889,13000
+    136.962152777778,55.4810763888889,13000
+    140.962152777778,55.4810763888889,13000
+  </coordinates>
+</LineString></Placemark>
+  </Folder>
+
+</Folder>
+</Document>
+</kml>
