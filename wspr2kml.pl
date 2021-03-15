@@ -9,25 +9,23 @@
 #
 
 use strict;
-
 use DateTime::Duration;
 use Ham::Locator;
 use lib '.';
 use latlon_distance;
 
+my %config = do 'config.pl';
 
 # if not used, filter values must be empty
-
-my $call_filter = "";
-my $pwr_filter  = "";
-#my $pwr_filter  = "0.01";
+my $call_filter = $config{'callsign'};
+my $pwr_filter  = $config{'power'};
 my $dupe_filter = 1;
-my $height = 13000;	#in meters
+if (defined $config{'dupe_filter'}) { $dupe_filter = $config{'dupe_filter'}; }
+my $height  = $config{'default_altitude'}; # in meters
 my $speed_filter = 0;
-#my $speed_filter = 350; # max speed in km/h. before we assume wrong it as wrong point.
+if (defined $config{'max_speed'}) { $speed_filter = $config{'max_speed'}; }
 
-#my $DEBUG = 0;
-my $DEBUG = 1;	# will print some data in STDERR if set to 1
+my $DEBUG = $config{'DEBUG'};	# will print some data to STDERR if set to 1
 
 my $pointScale = 3;
 #my $altitudeMode = "clampToGround"; #absolute, clampToSeaFloor, relativeToSeaFloor
@@ -37,28 +35,26 @@ my $pointExtrude = 1;
 my $lineExtrude = 1; 
 my $lineTessellate = 1; 
 
-my $input = "./data.tsv";
-#my $output = "/dev/stdout";
-my $output = "./output.kml";
-my $converter = new Ham::Locator;
+my $source = "/dev/stdin";
+if (defined $config{'source_file'}) { $source = $config{'source_file'}; }
 
+my $output = "/dev/stdout";
+#my $output = "./output.kml";
+if (defined $config{'output_file'}) { $output = $config{'output_file'}; }
+
+my $converter = new Ham::Locator;
 my @lines;
 
-
-
-open(IN, "<", $input) or die "can't open $input";
+open(IN, "<", $source) or die "can't open $source";
 
 # data filter
-
 	    if ($DEBUG == 1) {
-		print STDERR " timestamp        grid \t\tdist. \t\thours \tspeed (km/h)\n";
+		print STDERR " Timestamp        Grid  \tPower\tDistance \tHours \tSpeed (km/h)\n";
 	    }
-
 my $last_grid;
 my $last_timestamp;
 my $total_kilometers=0;
 my $total_time=0;
-
 foreach(<IN>){
     chomp;
     # if tsv copy/paste from web page
@@ -87,15 +83,15 @@ foreach(<IN>){
 
 	if ($speed_filter == 0 || $speed_kmh <= $speed_filter) {
 	    if ($DEBUG == 1) {
-		print STDERR "$timestamp $grid  \t$distance      \t$hours \t$speed_kmh\n";
+		print STDERR "$timestamp $grid  \t$pwr \t$distance      \t$hours \t$speed_kmh\n";
 	    }
 	    push @lines, [($timestamp, $call, $mhz, $snr, $drift, $grid, $pwr, $reporter, $rgrid, $km, $az, $mode, $distance, $hours, $speed_kmh)];
 	    $total_kilometers += $distance;
 	    $total_time += $hours;
-	}
-    }
 	    $last_grid = $grid;
 	    $last_timestamp = $timestamp;
+	}
+    }
 
 }
 close(IN);
@@ -144,7 +140,6 @@ foreach my $i (0..$#lines){
 
 print_line_string_footer();
 print OUT "  </Folder>\n";
-
 print_kml_footer();
 close(OUT);
 
@@ -221,6 +216,7 @@ my $name = shift;
 print OUT 
 '<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
+<!-- generated with wspr2kml, https://github.com/vilisas/wspr2kml -->
 <Document>
 ';
 print_kml_styles();
@@ -255,7 +251,6 @@ print OUT "
   <coordinates>
 ";
 #  <coordinates>...</coordinates>            <!-- lon,lat[,alt] -->
-
 }
 
 sub print_line_string_footer(){
