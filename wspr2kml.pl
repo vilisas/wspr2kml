@@ -73,13 +73,14 @@ foreach(<IN>){
 	my $speed_kmh = 0;
 	if ($ts1 ne "" && $ts2 ne ""){
 	    my $dur = $ts2->subtract_datetime($ts1);
-	    $time_delta_minutes = $dur->in_units('minutes');
-	    $hours = sprintf("%.2f",($time_delta_minutes / 60));
+	    $time_delta_minutes = $dur->in_units('minutes'); 
+	    my $days = $dur->in_units('days');
+	    my $h = ($days * 24) + ($time_delta_minutes / 60);
+	    $hours = sprintf("%.2f", $h);
 	}
-	if ($hours >0 && $distance > 0){
+	if ($hours != 0){
 	    $speed_kmh = sprintf("%.2f", ($distance / $hours));
 	}
-
 
 	if ($speed_filter == 0 || $speed_kmh <= $speed_filter) {
 	    if ($DEBUG == 1) {
