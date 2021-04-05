@@ -14,7 +14,7 @@ power		=>0.01,
 #
 # use only those reports, where calculated speed is less than max_speed
 # if disabled, you may see balloon flying weird speeds
-# *FIXME* Though it may be still valid when reports are 4 sign locator value
+# *FIXME* Though it may be still valid when reports are 4 sign locator value and balloon is passing their edges in short time
 # max_speed	=>350,
 #
 # DEBUG: if enabled, it will print some info to STDERR

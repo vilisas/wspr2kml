@@ -56,6 +56,7 @@ my $last_timestamp;
 my $total_kilometers=0;
 my $total_time=0;
 foreach(<IN>){
+    next if m/^[ ]*#/;
     chomp;
     # if tsv copy/paste from web page
     my ($timestamp, $call, $mhz, $snr, $drift, $grid, $pwr, $reporter, $rgrid, $km, $az, $mode) = split(/ \t /, $_);
